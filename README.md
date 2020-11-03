@@ -1,10 +1,14 @@
 # Wallet_APP
 Wallet_app is a react native application that is used to track expense records. This application is built watching tutorials from BoltSkills.
-It includes 
-### React UI Components
-### React Navigation
-### Redux
-### Animations
+### It includes 
+Add Expense
+
+
+### Learning Outcomes
+eact UI Components
+React Navigation
+Redux
+Animations
 
 Let's Start with React Native.
 
@@ -49,3 +53,53 @@ command for stack navigations (other navigations are tab navigation and drawer n
 #### Move into the folder and open code editor to make changes
 
 Visit to : https://reactnavigation.org/docs/hello-react-navigation
+
+create a directory src/Components
+components directory will hold all our screens and ui components
+create HomeScreen.js in it
+
+//In HomeScreen.js
+
+import React from 'react';
+import {View,Text} from 'react-native';
+function HomeScreen() {
+    return (
+        <View>
+            <Text>Home Screen</Text>
+        </View>
+    )
+}
+
+export default HomeScreen
+
+
+import HomeScreen.js in App.js
+
+// In App.js in a new project
+
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+function HomeScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+    </View>
+  );
+}
+
+const Stack = createStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App; 
