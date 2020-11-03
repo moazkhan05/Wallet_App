@@ -1,6 +1,8 @@
 # Wallet_APP
 Wallet_app is a react native application that is used to track expense records. This application is built watching tutorials from BoltSkills.
-### It includes 
+https://www.youtube.com/watch?v=jluConB3sro&list=PLr5IOV1YXoFXufIk1q1pRkI0LbnpF1EV9
+
+### Features 
 Add Expense
 
 
@@ -103,3 +105,21 @@ function App() {
 }
 
 export default App; 
+
+### Boom the app is running
+
+Add another screen AddTransaction.js
+
+Now Move towards Redux 
+
+What is Redux?
+Redux is a predictable state container for JavaScript apps.
+It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. On top of that, it provides a great developer experience, such as live code editing combined with a time traveling debugger.
+
+
+Create Store directory in src and add index.js file
+
+create subdirectory as Reducers and add two files
+1. index.js
+2. Transaction.js
+
