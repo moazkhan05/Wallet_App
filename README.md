@@ -19,8 +19,9 @@ Lets begin
 
 npx react-native init <app_name>
 
-#### Move into the folder and open code editor to make changes
-#### Add dependicies that will be used in this app by using CLI i.e
+
+## Add dependicies 
+that will be used in this app by using CLI 
 
 ###### npm install redux
 Redux is an open-source JavaScript library for managing application state.
@@ -45,7 +46,6 @@ all dependencies that will be needed for navigations
 ###### npm install @react-navigation/stack
 command for stack navigations (other navigations are tab navigation and drawer navigations)
 
-### Start coding
+#### Move into the folder and open code editor to make changes
 
 Visit to : https://reactnavigation.org/docs/hello-react-navigation
-
