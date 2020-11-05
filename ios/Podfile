@@ -8,6 +8,8 @@ target 'Wallet_App' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
   target 'Wallet_AppTests' do
     inherit! :complete
     # Pods for testing

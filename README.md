@@ -52,6 +52,9 @@ all dependencies that will be needed for navigations
 ###### npm install @react-navigation/stack
 command for stack navigations (other navigations are tab navigation and drawer navigations)
 
+###### npm i react-native-linear-gradient
+Gradients allow you to show more than one color with a smooth transition between the colors (think Instagram logo). They come in handy when trying to create multi-color backgrounds or custom buttons
+
 #### Move into the folder and open code editor to make changes
 
 Visit to : https://reactnavigation.org/docs/hello-react-navigation
@@ -120,6 +123,5 @@ It helps you write applications that behave consistently, run in different envir
 Create Store directory in src and add index.js file
 
 create subdirectory as Reducers and add two files
-1. index.js
-2. Transaction.js
-
+1.index.js
+2.Transaction.js
