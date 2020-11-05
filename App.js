@@ -21,7 +21,7 @@ function App() {
                         options={{ title: 'Expense Tracker', }}
           />
           <Stack.Screen name="Add" component={AddTransaction} 
-                        opotions={{ title: 'Add Expense', }}
+                        options={{ title: 'Add Expense', }}
           />
         </Stack.Navigator>
       </NavigationContainer>

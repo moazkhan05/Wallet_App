@@ -3,7 +3,13 @@ import  LinearGradient from "react-native-linear-gradient";
 import { View , Text , StyleSheet , FlatList } from 'react-native';
 import { Button , Container , CheckBox , Body , Right } from 'native-base';
 import Animated from 'react-native-reanimated'
-function HomeScreen() {
+
+/*Navigation Library*/
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+
+const HomeScreen = ({ navigation }) => {
     return (
         <Container>
             <Animated.View 
@@ -26,7 +32,9 @@ function HomeScreen() {
                     </View>
 
                     <View style={{width: '100%', alignItems: 'flex-end' }}>
-                        <Button rounded light style={styles.AddBtn}>
+                        <Button rounded light style={styles.AddBtn}
+                            onPress = { ()=> {navigation.navigate('Add');}}
+                        >
                             <Text style={styles.AddBtnText}>Add</Text>
                         </Button>
                     </View>

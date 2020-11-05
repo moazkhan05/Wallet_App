@@ -1,17 +1,17 @@
 import React from 'react';
-import { Text , View , StyleSheet } from "react-native";
-import { Conatinaer , Content , Form , Item , Input } from "native-base";
+import { Text , View , StyleSheet , TextInput } from "react-native";
+import { Container , Content , Form , Item , Input } from "native-base";
 
-function AddTransaction() {
+const AddTransaction = () => {
     return (
         <Container>
             <Content>
                 <Form>
                     <Item style={ styles.itemTitle }>
-                        <Input placeholder="Expense Title"/>
+                        <TextInput placeholder="Expense Title"/>
                     </Item>
                     <Item style={ styles.itemPrice }>
-                        <Input placeholder="Expense Price" keyboardType="num-pad"/>
+                        <TextInput placeholder="Expense Price" keyboardType="number-pad"/>
                     </Item>
                 </Form>
             </Content>
