@@ -2,46 +2,14 @@ import React from 'react';
 import  LinearGradient from "react-native-linear-gradient";
 import { View , Text , StyleSheet , FlatList  } from 'react-native';
 import { Button , Container , CheckBox , Body , Left , Right, ListItem } from 'native-base';
-import Animated from 'react-native-reanimated'
-
+import Animated from 'react-native-reanimated';
+import { useSelector } from 'react-redux';
 /*Navigation Library*/
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 
 /*FlatList Data*/
-const Data = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item',
-    price: '700',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
-    price: '50',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-    price: '600',
-  },
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb2872',
-    title: 'First Item',
-    price: '700',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f83',
-    title: 'Second Item',
-    price: '50',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d99',
-    title: 'Third Item',
-    price: '600',
-  },
-];
 
 const List = ( props ) => {
     return(
@@ -64,6 +32,8 @@ const List = ( props ) => {
 /*Flat List end*/
 
 const HomeScreen = ({ navigation }) => {
+    const { transactions } = useSelector((state) => state.transactions);
+
     return (
         <Container>
             <Animated.View 
@@ -102,10 +72,10 @@ const HomeScreen = ({ navigation }) => {
                 </View>
             </View> */}
                 <FlatList 
-                    style={{marginTop:200}} data={Data} renderItem= {({item}) =>(
+                    style={{marginTop:200}} data={ transactions } renderItem= {({item}) =>(
                     <List title={item.title} price={item.price} id={item.id}/>
                     )}
-                    keyExtractor = { (item) => item.id}
+                    keyExtractor = { (item) => item.id.toString()}
                 />
         </Container>
     )
