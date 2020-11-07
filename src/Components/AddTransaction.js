@@ -8,10 +8,10 @@ const AddTransaction = () => {
             <Content>
                 <Form>
                     <Item style={ styles.itemTitle }>
-                        <TextInput placeholder="Expense Title"/>
+                        <Input placeholder="Expense Title"/>
                     </Item>
                     <Item style={ styles.itemPrice }>
-                        <TextInput placeholder="Expense Price" keyboardType="number-pad"/>
+                        <Input placeholder="Expense Price" keyboardType="number-pad"/>
                     </Item>
                 </Form>
             </Content>
