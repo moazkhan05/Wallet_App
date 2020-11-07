@@ -1,7 +1,7 @@
 import React from 'react';
 import  LinearGradient from "react-native-linear-gradient";
-import { View , Text , StyleSheet , FlatList } from 'react-native';
-import { Button , Container , CheckBox , Body , Left , Right, Item , ListItem } from 'native-base';
+import { View , Text , StyleSheet , FlatList  } from 'react-native';
+import { Button , Container , CheckBox , Body , Left , Right, ListItem } from 'native-base';
 import Animated from 'react-native-reanimated'
 
 /*Navigation Library*/
@@ -26,6 +26,21 @@ const Data = [
     title: 'Third Item',
     price: '600',
   },
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb2872',
+    title: 'First Item',
+    price: '700',
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f83',
+    title: 'Second Item',
+    price: '50',
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d99',
+    title: 'Third Item',
+    price: '600',
+  },
 ];
 
 const List = ( props ) => {
@@ -33,10 +48,10 @@ const List = ( props ) => {
         <View style= {{ marginVertical: 3, paddingHorizontal : 30 , paddingVertical :15  }}>
             <ListItem>
                 <Left>
-                    <CheckBox />
+                    <CheckBox style= {{ marginLeft:-10 }}/>
                 </Left>
                 <Body>
-                    <Text>{props.title}</Text>
+                    <Text style= {{ fontSize: 20 , fontWeight:'500', marginLeft: -80 }}>{props.title}</Text>
                 </Body>
                 <Right>
                     <Text>{props.price}</Text>
@@ -86,13 +101,12 @@ const HomeScreen = ({ navigation }) => {
                     <Text style = {{ fontSize:20 , fontWeight: '400'}}>No Transaction</Text>
                 </View>
             </View> */}
-
-            <FlatList 
-                style={{marginTop:100}} data={Data} renderItem= {({item}) =>(
-                <List title={item.title} price={item.price} id={item.id}/>
-            )}
-                keyExtractor = { (item) => item.id}
-            />
+                <FlatList 
+                    style={{marginTop:200}} data={Data} renderItem= {({item}) =>(
+                    <List title={item.title} price={item.price} id={item.id}/>
+                    )}
+                    keyExtractor = { (item) => item.id}
+                />
         </Container>
     )
 }
