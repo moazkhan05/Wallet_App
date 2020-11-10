@@ -1,13 +1,12 @@
 import React from 'react';
-import  LinearGradient from "react-native-linear-gradient";
 import { View , Text , StyleSheet , FlatList  } from 'react-native';
 import { Button , Container , CheckBox , Body , Left , Right, ListItem } from 'native-base';
-import Animated from 'react-native-reanimated';
-import { useSelector } from 'react-redux';
-/*Navigation Library*/
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
 
+import { useSelector } from 'react-redux';
+
+/*Components*/
+import Card from './Card';
+import EmptyTrans from './EmptyTrans';
 
 /*FlatList Data*/
 
@@ -19,10 +18,12 @@ const List = ( props ) => {
                     <CheckBox style= {{ marginLeft:-10 }}/>
                 </Left>
                 <Body>
-                    <Text style= {{ fontSize: 20 , fontWeight:'500', marginLeft: -80 }}>{props.title}</Text>
+                    <Text style= {{ fontSize: 20 , fontWeight:'700', marginLeft: -80 }}>{props.title}</Text>
                 </Body>
                 <Right>
-                    <Text>{props.price}</Text>
+                    <Text style= {{ fontSize: 15 , fontWeight:'400' , color : props.price >0 ? 'green' : 'red' }}>
+                                    {props.price}
+                    </Text>
                 </Right>
             </ListItem>
         </View>
@@ -36,41 +37,10 @@ const HomeScreen = ({ navigation }) => {
 
     return (
         <Container>
-            <Animated.View 
-            style = {styles.Card} >
-                <LinearGradient
-                    colors = {[ '#42a9ed' , '#5942ed' , '#323aa8']} 
-                    style = {styles.Box }
-                >
-
-                    <View style = {{ width:'70%' , alignItems: 'flex-start' }}> 
-                        <Text style ={styles.CurrentBalance}>
-                            Current Balance
-                        </Text>
-                        <Text style ={styles.Balance}>
-                            ₨ 5,550
-                        </Text>
-                        <Text style={styles.CardNumber}>
-                            4200 **** **** 6898
-                        </Text>
-                    </View>
-
-                    <View style={{width: '100%', alignItems: 'flex-end' }}>
-                        <Button rounded light style={styles.AddBtn}
-                            onPress = { ()=> {navigation.navigate('Add');}}
-                        >
-                            <Text style={styles.AddBtnText}>Add</Text>
-                        </Button>
-                    </View>
-
-                </LinearGradient>
-            </Animated.View>
             
-            {/* <View style = {{ flex:1}}>
-                <View style= {{ alignItems: 'center' , marginTop:30}}>
-                    <Text style = {{ fontSize:20 , fontWeight: '400'}}>No Transaction</Text>
-                </View>
-            </View> */}
+                <Card />
+
+                <EmptyTrans />
                 <FlatList 
                     style={{marginTop:200}} data={ transactions } renderItem= {({item}) =>(
                     <List title={item.title} price={item.price} id={item.id}/>
