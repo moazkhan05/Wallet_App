@@ -1,6 +1,6 @@
 import React from 'react';
 import { View , Text , StyleSheet , FlatList  } from 'react-native';
-import { Button , Container , CheckBox , Body , Left , Right, ListItem } from 'native-base';
+import {  Container , CheckBox , Body , Left , Right, ListItem } from 'native-base';
 
 import { useSelector } from 'react-redux';
 
@@ -38,7 +38,7 @@ const HomeScreen = ({ navigation }) => {
     return (
         <Container>
             
-                <Card />
+                <Card navigation={navigation}/>
 
                 <EmptyTrans />
                 <FlatList 
