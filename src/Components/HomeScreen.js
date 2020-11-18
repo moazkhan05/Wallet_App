@@ -38,9 +38,9 @@ const HomeScreen = ({ navigation }) => {
     return (
         <Container>
             
-                <Card navigation={navigation}/>
+                <Card navigation= {navigation}/>
 
-                <EmptyTrans />
+                {/* <EmptyTrans /> */}
                 <FlatList 
                     style={{marginTop:200}} data={ transactions } renderItem= {({item}) =>(
                     <List title={item.title} price={item.price} id={item.id}/>

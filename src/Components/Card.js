@@ -2,10 +2,11 @@ import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import Animated from 'react-native-reanimated';
 
-import { Button } from 'native-base';
-import {Text , View, StyleSheet} from 'react-native';
+import {Container, Header, Content, Button} from 'native-base';
 
-function Card(props) {
+import {Text, View, StyleSheet} from 'react-native';
+
+function Card({navigation}) {
     return (
         <Animated.View style = {styles.Card} >
                 <LinearGradient
@@ -26,17 +27,15 @@ function Card(props) {
                     </View>
 
                     <View style={{width: '100%', alignItems: 'flex-end' }}>
-                        <Button rounded light style={styles.AddBtn}
-                            onPress = { ()=> {props.navigation.navigate('Add');}}
-                        >
-                            <Text style={styles.AddBtnText}>Add</Text>
-                        </Button>
+                         <Button onPress={() => alert("This is Card Body")} >
+                             <Text>Add</Text>
+                         </Button>                        
                     </View>
 
                 </LinearGradient>
         </Animated.View>
             
-    );
+    )
 }
 
 const styles = StyleSheet.create({
